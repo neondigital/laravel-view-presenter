@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Neondigital\\LaravelLocale\\": "src",
+            "Neondigital\\LaravelViewPresenter\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Neondigital\\LaravelLocale\\Test\\": "tests"
+            "Neondigital\\LaravelViewPresenter\\Test\\": "tests"
         }
     },
     "scripts": {
