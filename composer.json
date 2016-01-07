@@ -1,0 +1,37 @@
+{
+    "name": "neondigital/laravel-view-presenter",
+    "description": "A view presenter for Laravel 5",
+    "keywords": [
+        "Neon Digital",
+        "Laravel View Presenter"
+    ],
+    "homepage": "https://github.com/neondigital/laravel-view-presenter",
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "5.2.*",
+        "php" : ">=5.5.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neondigital\\LaravelLocale\\": "src",
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Neondigital\\LaravelLocale\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
