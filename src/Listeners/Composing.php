@@ -37,18 +37,21 @@ class Composing
         // Create fully qualified class name
         $viewPresenterClass = $presenterNamespace . implode('\\', $viewPaths);
 
-        if (class_exists($viewPresenterClass)) {
-            // Instantiate class and set data
-            $viewPresenter = new $viewPresenterClass;
-            $viewPresenter->setData($view->getData());
-            
-            // Remove existing view data
-            foreach ($view->getData() as $key => $value) {
-                unset($view->{$key});
-            }
-
-            // Decorate and bind data to view
-            $view->with($viewPresenter->decorate()->getData());
+        if (!class_exists($viewPresenterClass)) {
+            $viewPresenterClass = \Neondigital\LaravelViewPresenter\viewPresenter::class;
         }
+
+        // Instantiate class and set data
+        $viewPresenter = new $viewPresenterClass;
+        $viewPresenter->setData($view->getData());
+
+        // Remove existing view data
+        foreach ($view->getData() as $key => $value) {
+            unset($view->{$key});
+        }
+
+        // Decorate and bind data to view
+        $view->with($viewPresenter->decorate()->getData());
+
     }
 }

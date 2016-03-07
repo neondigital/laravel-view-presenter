@@ -40,7 +40,7 @@ class ViewPresenter
 
     protected function decorateValue($key, $value)
     {
-        if ($value instanceof \ArrayAccess) {
+        if ($value instanceof \ArrayAccess or is_array($value)) {
             $data = [];
             foreach ($value as $key2 => $value2) {
                 $data[$key2] = $this->decorateValue($key2, $value2);
