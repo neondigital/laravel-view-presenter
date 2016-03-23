@@ -38,7 +38,7 @@ class Composing
         $viewPresenterClass = $presenterNamespace . implode('\\', $viewPaths);
 
         if (!class_exists($viewPresenterClass)) {
-            $viewPresenterClass = \Neondigital\LaravelViewPresenter\viewPresenter::class;
+            $viewPresenterClass = \Neondigital\LaravelViewPresenter\ViewPresenter::class;
         }
 
         // Instantiate class and set data
